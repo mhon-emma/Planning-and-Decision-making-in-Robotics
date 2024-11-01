@@ -452,6 +452,7 @@ static void plannerRRT(
 //     planner(map, x_size, y_size, armstart_anglesV_rad, armgoal_anglesV_rad, numofDOFs, plan, planlength);
 // }
 {
+
     int maxIterations = 50000;   
     double goalBias = 0.05;      
     double stepSize = PI / 10.0; 
@@ -461,12 +462,15 @@ static void plannerRRT(
     std::srand(std::time(0));
 
     std::vector<Node*> tree;
+    //T.init(qinit)
     Node* startNode = new Node(armstart_anglesV_rad, numofDOFs);
     tree.push_back(startNode);
 
+    //for k=1 to K do
     for (int iter = 0; iter < maxIterations; ++iter) 
 	{
-        // Randomly sample 
+        // Randomly sample
+        //qrand <- RAND_CONF()
         double* randomConfig = new double[numofDOFs];
         if ((double)rand() / RAND_MAX < goalBias) 
 		{
@@ -487,10 +491,11 @@ static void plannerRRT(
             }
         }
 
+        // qnear <- NEAREST_VERTEX(q, T)
         Node* nearestNode = findNearestNode(tree, randomConfig, numofDOFs);
         Node* newNode = expandTree(nearestNode, randomConfig, stepSize, numofDOFs);
 
-        // Check if valid
+        // if NEW_CONFIG(q,qnear,qnew) then
         if (IsValidArmConfiguration(newNode->config, numofDOFs, map, x_size, y_size)) 
 		{
             tree.push_back(newNode);

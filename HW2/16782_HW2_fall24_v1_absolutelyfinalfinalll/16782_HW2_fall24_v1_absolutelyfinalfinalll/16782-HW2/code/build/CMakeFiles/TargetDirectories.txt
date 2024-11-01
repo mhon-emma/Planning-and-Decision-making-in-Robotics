@@ -1,0 +1,4 @@
+/home/nagababa/Downloads/16782_HW2_fall24_v1_finalfinalll/16782-HW2/code/build/CMakeFiles/planner.dir
+/home/nagababa/Downloads/16782_HW2_fall24_v1_finalfinalll/16782-HW2/code/build/CMakeFiles/verifier.dir
+/home/nagababa/Downloads/16782_HW2_fall24_v1_finalfinalll/16782-HW2/code/build/CMakeFiles/edit_cache.dir
+/home/nagababa/Downloads/16782_HW2_fall24_v1_finalfinalll/16782-HW2/code/build/CMakeFiles/rebuild_cache.dir

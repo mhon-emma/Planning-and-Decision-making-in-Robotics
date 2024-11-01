@@ -1,0 +1,4 @@
+/home/nagababa/Downloads/16782_HW2_fall24_v1_finalfinalll/16782-HW2/code/maps/map2.txt
+0.392309,2.35653,3.15553,
+0.986703,1.48168,2.32656,
+1.57116,0.755288,1.5706,

@@ -1,0 +1,20 @@
+Symbols: Egg, Pancake, Pan, Stove, Plate, Bowl, Table, Butter
+Initial conditions: On(Pancake, Table), On(Pan, Table), On(Butter, Table), On(Stove, Table), On(Plate, Table), On(Egg, Table), On(Bowl, Table),Block(Pancake), Block(Pan), Block(Stove), Block(Egg), Block(Butter),Tablewear(Plate), Tablewear(Bowl),Clear(Pancake), Clear(Stove), Clear(Pan), Clear(Plate), Clear(Bowl), Clear(Butter), Clear(Egg)
+Goal conditions: On(Pancake, Plate), On(Butter, Pancake), Hot(Pancake), On(Egg, Bowl), Hot(Egg)
+
+Actions:
+        MoveToTable(b,x)
+        Preconditions: On(b,x), Clear(b), Block(b), Block(x), !Hot(b)
+        Effects: On(b,Table), Clear(x), !On(b,x)
+
+        Move(b,x,y)
+        Preconditions: On(b,x), Clear(b), Clear(y), Block(b), Block(y), !Hot(b)
+        Effects: On(b,y), Clear(x), !On(b,x), !Clear(y)
+
+        Heat(x)
+        Preconditions: On(x, Pan), On(Pan, Stove), Block(x), Block(Pan), Clear(x)
+        Effects: Hot(x)
+
+        Serve(x,y)
+        Preconditions: On(x, Pan), Hot(x), Block(x), Tablewear(y), Clear(y)
+        Effects: On(x, y), !On(x, Pan), Clear(Pan), !Clear(y)
